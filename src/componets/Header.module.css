@@ -1,0 +1,59 @@
+.headerContainer {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topNav {
+    display: flex;
+    justify-content: start;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+}
+
+.topNav span {
+    margin-right: 30px;
+}
+
+.mainNav {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logoContainer {
+    flex: 0.2;
+}
+
+.logo {
+    width: 100px; /* adjust size according to your needs */
+    height: auto;
+}
+
+.menuButton {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 10px 20px;
+    border: 1px solid #e5e5e5;
+    margin: 0 20px;
+    border-radius: 25px;
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+}
+
+.iconsContainer button {
+    background: transparent;
+    border: none;
+    margin-left: 15px;
+    cursor: pointer;
+}
