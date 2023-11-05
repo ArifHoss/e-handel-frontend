@@ -1,0 +1,51 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navItems a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.mainContent {
+    padding: 2rem;
+}
+
+.featuredProducts, .categories {
+    margin-bottom: 2rem;
+}
+
+.productsGrid, .categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.productCard, .categoryCard {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
