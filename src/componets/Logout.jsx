@@ -1,13 +1,24 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext.jsx";
+import { useNavigate } from "react-router-dom";
 
-const Logout = () =>{
-    return(
-        <div>
-            <h2>Logout component</h2>
-        </div>
+const Logout = () => {
+    const { setLoggedIn, setUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-    )
+    const handleLogout = () => {
+        setLoggedIn(false);
+        setUser('');
+        localStorage.removeItem('user');
+        navigate("/");
+    };
 
-}
+    return (
+        <a href="/" onClick={(e) => {
+            e.preventDefault();
+            handleLogout();
+        }}>Logout</a>
+    );
+};
+
 export default Logout;

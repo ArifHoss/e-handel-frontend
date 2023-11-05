@@ -1,35 +1,25 @@
-// eslint-disable-next-line no-unused-vars
-import React, {useState} from "react";
+import {useContext, useState} from "react";
 import styles from './Login.module.css';
 import {useNavigate} from "react-router-dom";
+import {AuthContext} from "./AuthContext.jsx";
 
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState(null);
+    const {login, error} = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const users = [
-        {username: 'arif', password: 'zoro123'},
-        {username: 'miwa', password: 'zoro123'},
-    ];
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const user = users.find(u => u.username === username && u.password === password);
-        if (user) {
-            console.log('Login credentials', {username, password});
-            navigate('/');
-        } else {
-            setErrorMessage('INVALID_USER_OR_PASSWORD!');
-        }
+        login(username, password);
+        navigate('/');
+        console.log('User '+{username}+' logged in successfully')
     };
     const handleSignupButtonClick = () => {
         navigate('/signup');
     }
-    
 
 
     return (
@@ -37,7 +27,7 @@ const Login = () => {
             <form onSubmit={handleSubmit} className={styles.loginForm}>
                 <h2>Login</h2>
 
-                {errorMessage && <div className={styles.error}>{errorMessage}</div>}
+                {error && <div className={styles.error}>{error}</div>}
 
                 <div className={styles.inputGroup}>
                     <label htmlFor="username">Username</label>
