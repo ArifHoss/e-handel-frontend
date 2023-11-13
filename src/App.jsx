@@ -1,6 +1,6 @@
 // App.js
 import './App.css';
-import { Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 import Navbar from "./componets/Navbar.jsx";
 import Home from "./componets/Home.jsx";
 import Login from "./componets/Login.jsx";
@@ -11,7 +11,7 @@ import Footer from './componets/Footer';
 
 function App() {
     return (
-        <div>
+        <div>            
             <Navbar/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
@@ -19,7 +19,7 @@ function App() {
                 <Route path='/logout' element={<Logout/>}/>
                 <Route path='/signup' element={<Signup/>}/>
             </Routes>
-            <Footer/>
+            <Footer/>           
         </div>
     );
 }

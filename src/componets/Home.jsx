@@ -1,16 +1,21 @@
 import styles from './Home.module.css'; // Assume CSS module for styling
+import {FaComputer} from "react-icons/fa6"
+import {GiWashingMachine} from "react-icons/gi"
+import {RiComputerFill} from "react-icons/ri"
+import {IoLogoGameControllerB} from "react-icons/io"
+
 
 const Home = () => {
     return (
         <div className={styles.home}>
             <header className={styles.header}>
                 <nav className={styles.navbar}>
-                    <div className={styles.brand}>eShop</div>
+                    
                     <div className={styles.navItems}>
-                        <a href="/categories">Categories</a>
-                        <a href="/deals">Deals</a>
-                        <a href="/cart">Cart</a>
-                        <a href="/account">Account</a>
+                        <a href="/computers"><FaComputer className={styles.icon}/></a>
+                        <a href="/appliances"><GiWashingMachine className={styles.icon}/></a>
+                        <a href="/tv_sound_home"><RiComputerFill className={styles.icon}/></a>
+                        <a href="/cart"><IoLogoGameControllerB className={styles.icon}/></a>
                     </div>
                 </nav>
             </header>
