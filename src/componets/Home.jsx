@@ -35,9 +35,9 @@ const Home = () => {
                     </div>
                 </section>
             </main>
-            <footer className={styles.footer}>
+            {/* <footer className={styles.footer}>
                 <p>© 2023 eShop. All rights reserved.</p>
-            </footer>
+            </footer> */}
         </div>
     );
 };

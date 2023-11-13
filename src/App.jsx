@@ -6,6 +6,7 @@ import Home from "./componets/Home.jsx";
 import Login from "./componets/Login.jsx";
 import Logout from "./componets/Logout.jsx";
 import Signup from "./componets/Signup.jsx";
+import Footer from './componets/Footer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 <Route path='/logout' element={<Logout/>}/>
                 <Route path='/signup' element={<Signup/>}/>
             </Routes>
+            <Footer/>
         </div>
     );
 }

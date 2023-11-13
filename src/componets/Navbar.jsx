@@ -6,7 +6,7 @@ import {AuthContext} from "./AuthContext.jsx";
 import Logout from "./Logout.jsx";
 
 const Navbar = () => {
-    const { loggedIn } = useContext(AuthContext);
+    const { loggedIn, user } = useContext(AuthContext);
     return (
         <nav className={styles.navbar}>
             <div className={styles.leftLinks}>
@@ -28,7 +28,10 @@ const Navbar = () => {
                     )}
                     {/* Show this link only if the user is logged in */}
                     {loggedIn &&
+                    <>
+                        <li>Välkommen, {user.username}</li>
                         <li><Logout/></li>
+                        </>
                     }
                 </ul>
             </div>
