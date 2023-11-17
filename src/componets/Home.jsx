@@ -12,10 +12,16 @@ const Home = () => {
                 <nav className={styles.navbar}>
                     
                     <div className={styles.navItems}>
-                        <a href="/computers"><FaComputer className={styles.icon}/></a>
-                        <a href="/appliances"><GiWashingMachine className={styles.icon}/></a>
-                        <a href="/tv_sound_home"><RiComputerFill className={styles.icon}/></a>
-                        <a href="/cart"><IoLogoGameControllerB className={styles.icon}/></a>
+                        <a  href="/computers"><FaComputer className={styles.icon}/><span>COMPUTER&OFFICE</span></a>   
+                    </div>
+                    <div className={styles.navItems}>
+                        <a  href="/appliances"><GiWashingMachine className={styles.icon}/>APPLIANCES</a>
+                    </div>
+                    <div className={styles.navItems}>
+                        <a  href="/tv_sound_home"><RiComputerFill className={styles.icon}/>TV,SOUNDS&AMART HOME</a>
+                    </div> 
+                    <div className={styles.navItems}>
+                        <a  href="/game"><IoLogoGameControllerB className={styles.icon}/>GAMING</a>
                     </div>
                 </nav>
             </header>

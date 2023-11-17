@@ -12,13 +12,13 @@ const Navbar = () => {
             <div className={styles.leftLinks}>
             </div>
             <div className={styles.title}>
-                <h3>AM-GIGANTEN</h3>
+                <Link to="/">AM-GIGANTEN</Link>
             <input type="text" placeholder="Sök efter produkt, kategori eller artikel" className={styles.searchInput} />
             </div>
 
             <div className={styles.rightLinks}>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    {/* <li><Link to="/">Home</Link></li> */}
                     {/* Show these links only if the user is not logged in */}
                     {!loggedIn && (
                         <>

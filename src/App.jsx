@@ -7,6 +7,10 @@ import Login from "./componets/Login.jsx";
 import Logout from "./componets/Logout.jsx";
 import Signup from "./componets/Signup.jsx";
 import Footer from './componets/Footer';
+import Computers from './componets/products/Computers.jsx';
+import Appliances from './componets/products/Appliances.jsx';
+import TvSoundHome from './componets/products/TvSoundHome.jsx';
+import Game from './componets/products/Game.jsx';
 
 
 function App() {
@@ -18,6 +22,10 @@ function App() {
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/logout' element={<Logout/>}/>
                 <Route path='/signup' element={<Signup/>}/>
+                <Route path='/computers' element={<Computers/>}/>
+                <Route path='/appliances' element={<Appliances/>}/>
+                <Route path='/tv_sound_home' element={<TvSoundHome/>}/>
+                <Route path='/game' element={<Game/>}/>
             </Routes>
             <Footer/>           
         </div>
