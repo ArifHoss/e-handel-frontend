@@ -1,0 +1,92 @@
+/* Menu.module.css */
+
+/* Corrected .header-links-container */
+.headerLinksContainer {
+    width: 100px;
+    height: 100%;
+    background-color: #eee;
+    position: fixed;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    transition: all 0.5s;
+}
+
+/* .header-links */
+.headerLinks {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .change class */
+.change {
+    opacity: 1;
+    width: 200px;
+}
+
+/* .hamburger class */
+.hamburger {
+    position: fixed;
+    height: 3rem;
+    width: 3rem;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    text-align: center;
+    z-index: 100;
+}
+
+/* .hamburger__icon */
+.hamburger__icon {
+    position: relative;
+    margin-top: 1.5rem;
+    width: 2rem;
+    height: 2px;
+    background-color: #333;
+    display: inline-block;
+}
+
+/* .hamburger__icon:before */
+.hamburger__icon::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -0.8rem;
+    width: 2rem;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.2s;
+}
+
+/* .hamburger__icon:after */
+.hamburger__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    width: 2rem;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.2s;
+}
+
+/* .hamburger-active .hamburger__icon */
+.hamburgerActive .hamburger__icon {
+    background-color: transparent;
+}
+
+/* .hamburger-active .hamburger__icon:before */
+.hamburgerActive .hamburger__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+/* .hamburger-active .hamburger__icon:after */
+.hamburgerActive .hamburger__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+}

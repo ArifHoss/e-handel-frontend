@@ -11,6 +11,7 @@ import Computers from './componets/products/Computers.jsx';
 import Appliances from './componets/products/Appliances.jsx';
 import TvSoundHome from './componets/products/TvSoundHome.jsx';
 import Game from './componets/products/Game.jsx';
+import Menu from "./componets/Menu.jsx";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/appliances' element={<Appliances/>}/>
                 <Route path='/tv_sound_home' element={<TvSoundHome/>}/>
                 <Route path='/game' element={<Game/>}/>
+                <Route path='/menu' element={<Menu/>}/>
             </Routes>
             <Footer/>           
         </div>
