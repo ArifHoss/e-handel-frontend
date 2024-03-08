@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useContext, useState} from "react";
 import * as FaIcons from "react-icons/fa";
+import { IoMdLogIn } from "react-icons/io";
 import {Link} from "react-router-dom";
 import styles from "./Navbar.module.css";
 import {AuthContext} from "./AuthContext.jsx";
@@ -12,6 +13,10 @@ const Navbar = () => {
     const [sidebar, setSidebar] =useState(false);
     const showSidebar =() =>setSidebar(!sidebar); //If sidebar is true, it becomes false, and vice versa. it switches the value of sidebar between true and false.
     console.log("sidebar",sidebar)
+
+    const [sidebarMypage, setSidebarMypage] =useState(false);
+    const showSidebarMypage =() =>setSidebarMypage(!sidebarMypage);
+
     return (
     <>
       <nav className={styles.navbar} >
@@ -32,7 +37,11 @@ const Navbar = () => {
                     {/* Show these links only if the user is not logged in */}
                     {!loggedIn && (
                         <>
-                            <li><Link to="/login">Login</Link></li>
+                            <li>
+                                <Link to="#" onClick={showSidebarMypage}>
+                                <IoMdLogIn />
+                                Login
+                                </Link></li>
                             {/*<li><Link to="/signup">SignUp</Link></li>*/}
                         </>
                     )}
@@ -46,6 +55,8 @@ const Navbar = () => {
                 </ul>
             </div>
         </nav>
+
+        {/*sidebar left  */}
         <div className={sidebar? `${styles.sidebar} ${styles.active}`: `${styles.sidebar}`}>
          <ul className={styles.sidebarItems} onClick={showSidebar}>
           <li className={styles.sidebarToggle}>
@@ -65,6 +76,29 @@ const Navbar = () => {
           })}
          </ul>
         </div>
+
+        {/*sidebar right login  */}
+
+        <div className={sidebarMypage? `${styles.sidebar_mypage} ${styles.active}`: `${styles.sidebar_mypage}`}>
+         <ul className={styles.sidebarItems} onClick={showSidebarMypage}>
+          <li className={styles.sidebar_mypageToggle}>
+          <Link to="#">
+            <FaIcons.FaRegWindowClose onClick={showSidebarMypage}/>
+          </Link>
+          </li>
+          {sidebarData.map((item , index)=>{
+            return(
+                <li key={index} className={item.cName}>
+                    <Link to={item.path} className={styles.sidebarText}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                    </Link>
+                </li>
+            )
+          })}
+         </ul>
+        </div>
+
         </>
         
     )

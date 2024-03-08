@@ -16,7 +16,37 @@
 
 }
 
+.sidebar_mypage{
+    background: #4f4e4e;
+    width: 450px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed; 
+    top:0;
+    right: -100%;
+    transition: 850 ms;
+    z-index: 101; 
+}
 
+.sidebar_mypage.active{
+    right: 0;
+    transition: 350ms;
+}
+
+
+.sidebar_mypageToggle{
+    background: #df7676;
+    width: 80%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items:center;
+    margin-left: 5%;
+
+}
+
+/*--------------sidebar left-------------------*/
 .sidebar{
     background: #4f4e4e;
     width: 450px;
@@ -61,9 +91,9 @@
     margin: 0;
     width: 100%;
 }
-
+/*To fix close-icon leftside on the sidebar*/
 .sidebarToggle{
-    background: #4f4e4e;
+    
     width: 80%;
     height: 80px;
     display: flex;
