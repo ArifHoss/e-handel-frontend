@@ -7,6 +7,7 @@ import styles from "./Navbar.module.css";
 import {AuthContext} from "./AuthContext.jsx";
 import Logout from "./Logout.jsx";
 import {sidebarData} from "./NavbarSideData.jsx";
+import Login from  "./Login.jsx";
 
 const Navbar = () => {
     const { loggedIn, user } = useContext(AuthContext);
@@ -78,25 +79,20 @@ const Navbar = () => {
         </div>
 
         {/*sidebar right login  */}
-
+        {/*If login success navigate Home. Just now sidebar does not close.  */}
         <div className={sidebarMypage? `${styles.sidebar_mypage} ${styles.active}`: `${styles.sidebar_mypage}`}>
-         <ul className={styles.sidebarItems} onClick={showSidebarMypage}>
+         <ul className={styles.sidebarItems} >
           <li className={styles.sidebar_mypageToggle}>
           <Link to="#">
             <FaIcons.FaRegWindowClose onClick={showSidebarMypage}/>
           </Link>
           </li>
-          {sidebarData.map((item , index)=>{
-            return(
-                <li key={index} className={item.cName}>
-                    <Link to={item.path} className={styles.sidebarText}>
-                        {item.icon}
-                        <span>{item.title}</span>
-                    </Link>
-                </li>
-            )
-          })}
-         </ul>
+
+          
+              <Login/>
+            
+
+        </ul>
         </div>
 
         </>
