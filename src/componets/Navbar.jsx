@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import * as FaIcons from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
 import {Link} from "react-router-dom";
@@ -17,6 +16,15 @@ const Navbar = () => {
 
     const [sidebarMypage, setSidebarMypage] =useState(false);
     const showSidebarMypage =() =>setSidebarMypage(!sidebarMypage);
+
+    // Close sidebarMypage when loggedIn state changes from false to true
+    useEffect (()=>{
+        if (loggedIn){
+            setSidebarMypage(false)
+        }
+
+    }, [loggedIn])
+
 
     return (
     <>
@@ -80,6 +88,7 @@ const Navbar = () => {
 
         {/*sidebar right login  */}
         {/*If login success navigate Home. Just now sidebar does not close.  */}
+
         <div className={sidebarMypage? `${styles.sidebar_mypage} ${styles.active}`: `${styles.sidebar_mypage}`}>
          <ul className={styles.sidebarItems} >
           <li className={styles.sidebar_mypageToggle}>
@@ -87,15 +96,14 @@ const Navbar = () => {
             <FaIcons.FaRegWindowClose onClick={showSidebarMypage}/>
           </Link>
           </li>
-
-          
-              <Login/>
-            
-
-        </ul>
+                <Login />
+        </ul> 
         </div>
+        
+
 
         </>
+
         
     )
 

@@ -51,7 +51,7 @@ const Login = () => {
                         className={styles.inputField}
                     />
                 </div>
-                <button type="submit" className={styles.loginButton}>Login</button>
+                <button type="submit" className={styles.loginButton}  >Login</button>
                 <h2>Or</h2>
                 <button type="button" onClick={handleSignupButtonClick} className={styles.signupButton}>SignUp</button>
             </form>
